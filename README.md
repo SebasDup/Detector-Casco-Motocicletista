@@ -39,6 +39,26 @@ Para mejorar la robustez del modelo y compensar la cantidad de datos, se aplicar
 3. Ejecuta el script principal para levantar la interfaz local.
 4. Abre la dirección generada por Gradio en tu navegador, sube una foto de un motociclista y observa el análisis de confianza por clase (Sí tiene casco / No tiene casco).
 
+## ☁️ Cómo probar el modelo en la nube (Google Colab)
+
+Si deseas probar el modelo sin necesidad de configurar un entorno local de Python o instalar librerías pesadas, puedes ejecutar este proyecto directamente en la nube utilizando Google Colab y Google Drive. Sigue estos pasos:
+
+### 1. Preparar el entorno en Google Drive
+1. Descarga el código y los archivos de este repositorio.
+2. Sube la carpeta completa a la raíz de tu Google Drive. 
+3. **⚠️ Importante:** Asegúrate de que la carpeta principal se llame exactamente `Deteccion_de_Casco` y que esté en la vista principal de tu Drive (`MyDrive`). Si le cambias el nombre o la guardas dentro de otra subcarpeta, el código no encontrará las rutas de las imágenes ni del modelo.
+
+### 2. Ejecutar el código en Google Colab
+1. Ingresa a [Google Colab](https://colab.research.google.com/).
+2. En la ventana emergente, selecciona la pestaña **Subir** (Upload) y carga el archivo `modelo_deteccion_casco.ipynb` que viene en el proyecto.
+3. Ejecuta la primera celda del código haciendo clic en el botón de "Play" (▶️). Esta celda contiene el comando `drive.mount('/content/drive')`. 
+4. Colab te pedirá autorización para acceder a tus archivos de Drive. Haz clic en **Permitir** (esto es estrictamente necesario para que el código pueda leer los pesos del modelo y el set de imágenes).
+
+### 3. Lanzar la Interfaz Gráfica (Gradio)
+1. Una vez conectado el Drive, ejecuta el resto de las celdas de código una por una hacia abajo.
+2. Al ejecutar la última celda (la de configuración de Gradio), el sistema procesará la interfaz y generará una URL pública en la terminal (con un formato similar a `https://....gradio.live`).
+3. Haz clic en ese enlace para abrir la aplicación web. ¡Listo! Ya puedes cargar tus propias imágenes y poner a prueba el detector de cascos.
+
 ## 📸 Demostración
 <img width="1896" height="916" alt="Screenshot 2026-07-22 205641" src="https://github.com/user-attachments/assets/98b53bc0-12c1-4215-9a5f-6f2d6f67bb19" />
 <img width="1896" height="916" alt="Screenshot 2026-07-22 205404" src="https://github.com/user-attachments/assets/447d3ba8-4e0e-485a-8028-8d6ed995aaaf" />
